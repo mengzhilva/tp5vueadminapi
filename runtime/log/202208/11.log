@@ -1,0 +1,38 @@
+---------------------------------------------------------------
+
+[2022-08-11T18:10:36+08:00] 127.0.0.1 POST admin.campapp.xyz/users/lists
+[运行时间：0.027544s] [吞吐率：36.31req/s] [内存消耗：3,000.95kb] [文件加载：77]
+[ info ] [ LANG ] /home/wwwroot/tp5vueapi/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.campapp.xyz',
+  'connection' => 'close',
+  'content-length' => '2',
+  'sec-ch-ua' => '".Not/A)Brand";v="99", "Google Chrome";v="103", "Chromium";v="103"',
+  'accept' => 'application/json, text/plain, */*',
+  'content-type' => 'application/json;charset=UTF-8',
+  'authorization' => 'c1ddd8627605fca2485709a79b9d66e0',
+  'sec-ch-ua-mobile' => '?0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36',
+  'sec-ch-ua-platform' => '"Windows"',
+  'origin' => 'http://localhost:7778',
+  'sec-fetch-site' => 'same-origin',
+  'sec-fetch-mode' => 'cors',
+  'sec-fetch-dest' => 'empty',
+  'referer' => 'http://localhost:7778/user',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'Hm_lvt_bd9b56eb89f06e1f9ca6c7db272ec1a1=1658980893,1659942378,1659946942; Hm_lpvt_bd9b56eb89f06e1f9ca6c7db272ec1a1=1660124572; PHPSESSID=ord4jrvq4e4jiv9cekiv4ri53i',
+  'x-forwarded-for' => '127.0.0.1',
+  'x-forwarded-port' => '7778',
+  'x-forwarded-proto' => 'http',
+  'x-forwarded-host' => 'localhost:7778',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001324s ] mysql:host=rm-t4nip7q0y9014r770.mysql.singapore.rds.aliyuncs.com;dbname=tpvue;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001800s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `token` = 'c1ddd8627605fca2485709a79b9d66e0' LIMIT 1 [ RunTime:0.000485s ]

@@ -1,0 +1,340 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{$adminlte_path}bower_components/select2/dist/css/select2.min.css">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{$app.name}外放文档</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.7 -->
+    <link rel="stylesheet" href="{$adminlte_path}bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="{$adminlte_path}bower_components/font-awesome/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="{$adminlte_path}bower_components/Ionicons/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="{$adminlte_path}dist/css/AdminLTE.min.css">
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+         folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="{$adminlte_path}dist/css/skins/_all-skins.min.css">
+    <!-- Morris chart -->
+    <link rel="stylesheet" href="{$adminlte_path}bower_components/morris.js/morris.css">
+    <!-- jvectormap -->
+    <link rel="stylesheet" href="{$adminlte_path}bower_components/jvectormap/jquery-jvectormap.css">
+    <!-- Date Picker -->
+    <link rel="stylesheet" href="{$adminlte_path}bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+    <!-- Daterange picker -->
+    <link rel="stylesheet" href="{$adminlte_path}bower_components/bootstrap-daterangepicker/daterangepicker.css">
+    <!-- bootstrap wysihtml5 - text editor -->
+    <link rel="stylesheet" href="{$adminlte_path}plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Google Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+</head>
+<body class="hold-transition skin-green-light sidebar-mini">
+<div class="wrapper">
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper" style="margin-left: 0px;">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <h1>
+               {$app.name}，对接文档
+            </h1>
+        </section>
+        <!-- Main content -->
+        <section class="content">
+            <!-- /.box-header -->
+            <!-- form start -->
+            <div class="box box-info">
+                <div class="box-header with-border">
+                    <h3 class="box-title">对接信息</h3>
+                </div>
+                <div class="box-body">
+                    <label>基础信息</label>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">应用名称</span>
+                            <input type="text" disabled="disabled" class="form-control" value="{$app.name}">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">任务类型</span>
+                            <input type="text" disabled="disabled" class="form-control" value="快速任务">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">下载地址</span>
+                            <input type="text" disabled="disabled" class="form-control" value="{$app.url}">
+                        </div>
+                    </div>
+                </div>
+                <div class="box-body">
+                    <label>点击上报信息</label>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">请求地址</span>
+                            <input type="text" disabled="disabled" class="form-control" value="{$url}union/click.html">
+                        </div>
+                    </div>
+                    <div style="margin-left: 30px;">
+                        <label>get参数</label>
+                                                    <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon">appid</span>
+                                    <input type="text" disabled="disabled" class="form-control" value="{$app.id}">
+                                </div>
+                            </div>
+                                                    <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon">source</span>
+                                    <input type="text" disabled="disabled" class="form-control" value="{$aduser.tag}">
+                                </div>
+                            </div>
+                                                    <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon">zq_clientip</span>
+                                    <input type="text" disabled="disabled" class="form-control" value="做任务用户客户端ip">
+                                </div>
+                            </div>
+                                                    <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon">zq_idfa</span>
+                                    <input type="text" disabled="disabled" class="form-control" value="做任务客户端idfa">
+                                </div>
+                            </div>
+                                                    <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon">zq_os</span>
+                                    <input type="text" disabled="disabled" class="form-control" value="做任务客户端系统">
+                                </div>
+                            </div>
+                                                    <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon">zq_keyword</span>
+                                    <input type="text" disabled="disabled" class="form-control" value="做任务关键字（无关键字的任务不需要）">
+                                </div>
+                            </div>
+                                                    <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon">zq_device</span>
+                                    <input type="text" disabled="disabled" class="form-control" value="任务的设备型号">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon">zq_udid</span>
+                                    <input type="text" disabled="disabled" class="form-control" value="任务的设备udid">
+                                </div>
+                            </div>
+                            {if $app.type == '2'}
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon">zq_callback</span>
+                                    <input type="text" disabled="disabled" class="form-control" value="回调地址">
+                                </div>
+                            </div>
+                            {/if}
+                                            </div>
+                    <div style="margin-left: 30px;">
+                        <label>post参数</label>
+                                                    <div class="form-group">
+                                <div class="input-group" style="width: 100%">
+                                    <input type="text" disabled="disabled" class="form-control" value="无">
+                                </div>
+                            </div>
+                                            </div>
+                    <div style="margin-left: 30px; width: auto;">
+                        <label>返回数据说明</label>
+                        <div class="box-body">
+                            <p>点击上报接口调用应该在用户做任务之前调用，返还值为json数据，返还值中的code为1代表接口调用成功。</p>
+                            <p>失败示例：{"code":0,"msg":"za_idfv参数错误","time":"1522204872","data":[]}</p>
+                            <p>成功示例：{"code":1,"msg":"点击上报完成","time":"1522204806","data":{"idfa":"2415E534-895B-4EAF-A85B-60669E737179"}}</p>
+
+                        </div>
+                        <!-- /.box-body -->
+                    </div>
+                </div>
+                <div class="box-body">
+                    <label>激活上报信息</label>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">请求地址</span>
+                            <input type="text" disabled="disabled" class="form-control" value="{$url}union/active.html">
+                        </div>
+                    </div>
+                    <div style="margin-left: 30px;">
+                        <label>get参数</label>
+                       <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">appid</span>
+                                <input type="text" disabled="disabled" class="form-control" value="{$app.id}">
+                            </div>
+                        </div>
+                        <?php if($taskid){?>
+                       <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">taskid</span>
+                                <input type="text" disabled="disabled" class="form-control" value="{$taskid}">
+                            </div>
+                        </div>
+                        <?php }?>
+                                                <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">source</span>
+                                <input type="text" disabled="disabled" class="form-control" value="{$aduser.tag}">
+                            </div>
+                        </div>
+                                                <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">zq_clientip</span>
+                                <input type="text" disabled="disabled" class="form-control" value="做任务用户客户端ip">
+                            </div>
+                        </div>
+                                                <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">zq_idfa</span>
+                                <input type="text" disabled="disabled" class="form-control" value="做任务客户端idfa">
+                            </div>
+                        </div>
+                                                <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">zq_os</span>
+                                <input type="text" disabled="disabled" class="form-control" value="做任务客户端系统">
+                            </div>
+                        </div>
+                                                <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">zq_keyword</span>
+                                <input type="text" disabled="disabled" class="form-control" value="做任务关键字（无关键字的任务不需要）">
+                            </div>
+                        </div>
+                                                <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">zq_device</span>
+                                <input type="text" disabled="disabled" class="form-control" value="任务的设备型号">
+                            </div>
+                        </div>
+                                                <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">zq_udid</span>
+                                <input type="text" disabled="disabled" class="form-control" value="任务的设备udid">
+                            </div>
+                        </div>
+                                            </div>
+                    <div style="margin-left: 30px;">
+                        <label>post参数</label>
+                                                <div class="form-group">
+                            <div class="input-group" style="width: 100%">
+                                <input type="text" disabled="disabled" class="form-control" value="无">
+                            </div>
+                        </div>
+                                            </div>
+                    <div style="margin-left: 30px; width: auto;">
+                        <label>返回数据说明</label>
+                        <div class="box-body">
+                            <p>激活上报接口调用应该在用户做任务之后调用，返还值为json数据，返还值中的code为1代表接口调用成功。</p>
+                            <p>失败示例：{"code":0,"msg":"za_idfv参数错误","time":"1522204872","data":[]}</p>
+                            <p>成功示例：{"code":1,"msg":"激活上报完成","time":"1522204806","data":{"idfa":"2415E534-895B-4EAF-A85B-60669E737179"}}</p>
+                        </div>
+                        <!-- /.box-body -->
+                    </div>
+                </div>
+                <div class="box-body">
+                    <label>去重对接信息</label>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">请求地址</span>
+                            <input type="text" disabled="disabled" class="form-control" value="{$url}union/repeat.html">
+                        </div>
+                    </div>
+                    <div style="margin-left: 30px;">
+                        <label>get参数</label>
+                                                <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">appid</span>
+                                <input type="text" disabled="disabled" class="form-control" value="{$app.id}">
+                            </div>
+                        </div>
+                                                <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">source</span>
+                                <input type="text" disabled="disabled" class="form-control" value="{$aduser.tag}">
+                            </div>
+                        </div>
+                                                <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">zq_clientip</span>
+                                <input type="text" disabled="disabled" class="form-control" value="做任务用户客户端ip">
+                            </div>
+                        </div>
+                                                <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">zq_idfa</span>
+                                <input type="text" disabled="disabled" class="form-control" value="做任务客户端idfa">
+                            </div>
+                        </div>
+                                                <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">zq_os</span>
+                                <input type="text" disabled="disabled" class="form-control" value="做任务客户端系统">
+                            </div>
+                        </div>
+                                                <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">zq_udid</span>
+                                <input type="text" disabled="disabled" class="form-control" value="任务的设备udid">
+                            </div>
+                        </div>
+                                                <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">zq_device</span>
+                                <input type="text" disabled="disabled" class="form-control" value="任务的设备型号">
+                            </div>
+                        </div>
+                                            </div>
+                    <div style="margin-left: 30px;">
+                        <label>post参数</label>
+                                                <div class="form-group">
+                            <div class="input-group" style="width: 100%">
+                                <input type="text" disabled="disabled" class="form-control" value="无">
+                            </div>
+                        </div>
+                                            </div>
+                    <div style="margin-left: 30px; width: auto;">
+                        <label>返回数据说明</label>
+                        <div class="box-body">
+                            <p>激活上报接口调用应该在用户做任务之前调用，返还值为json数据，返还值中的code为1代表接口调用成功。该接口用于判断用户是否能做该任务</p>
+                            <p>失败示例：{"code":0,"msg":"za_idfv参数错误","time":"1522204872","data":[]}</p>
+                            <p>成功示例：{"code":1,"msg":"成功获取去重数据","time":"1522205868","data":{"2415E534-895B-4EAF-A85B-60669E737179":1}} 该idfa不可以接受任务</p>
+                            <p>成功示例：{"code":1,"msg":"成功获取去重数据","time":"1522205868","data":{"2415E534-895B-4EAF-A85B-60669E737179":0}} 该idfa可以接受任务</p>
+                        </div>
+                        <!-- /.box-body -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+    <footer class="main-footer" style="margin-left: 0px;">
+        <div class="pull-right hidden-xs">
+            <b>Version</b> 2.0.0
+        </div>
+        <strong>Copyright &copy; 2019 <a href="#"></a>.</strong> 繁星娱乐 All rights
+        reserved.
+    </footer>
+    <div class="control-sidebar-bg"></div>
+</div>
+
+</body>
+</html>
